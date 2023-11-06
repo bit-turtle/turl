@@ -43,7 +43,8 @@ int main(int argc,char *argv[]) {
 			}
 			if (!turlWord.empty()) turlFile.push_back(turlWord);
 			turlWord = "";
-			turlFile.push_back(";");
+			if (quotes) turlFile.push_back("\n");
+			else turlFile.push_back(";");
 		}
 		for (string i : turlFile) {
 				cout << i << endl;
