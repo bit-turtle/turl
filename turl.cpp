@@ -28,13 +28,13 @@ int main(int argc,char *argv[]) {
 					turlWord = "";
 				}
 				else if (turlLine[character] == '"' && !(quotes && escape)) { //Separate Things Between "", disable " in a string if escape is set to true
-					if (quotes) quotes = false;
-					else quotes = true;
 					if (!turlWord.empty()) turlFile.push_back(turlWord);
 					turlWord = "";
+					if (!quotes) quotes = true;
+					else quotes = false;
 				}
 				else {
-					if (turlLine[character] == '"' && !turlWord.empty()) turlWord.pop_back();
+					if (turlLine[character] == '"' && !turlWord.empty()) turlWord.pop_back(); //Delete Escape Character when used in string to write a quote (Line 30: for if test for escaping a quote)
 					turlWord += turlLine[character];
 				}
 				//Set Escape Boolean to true if there is a slash
@@ -44,7 +44,7 @@ int main(int argc,char *argv[]) {
 			if (!turlWord.empty()) turlFile.push_back(turlWord);
 			turlWord = "";
 			if (quotes) turlFile.push_back("\n");
-			else turlFile.push_back(";");
+			else turlFile.push_back(";"); //Add semicolon at the end of every new line
 		}
 		for (string i : turlFile) {
 				cout << i << endl;
