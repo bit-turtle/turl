@@ -19,7 +19,7 @@ int main(int argc,char *argv[]) {
 		while (getline(turlSource,turlLine)) {
 			for (character = 0;character < turlLine.length();character++) {
 				if (turlLine[character] == '#' && !quotes) break; //hashtag '#' comments 
-				else if (turlLine[character] == ' ' && !quotes || turlLine[character] == '\t' && !quotes) { //Space or Tab Delimiter When Not In Quotes
+				else if ((turlLine[character] == ' ' || turlLine[character] == '\t') && !quote) { //Space or Tab Delimiter When Not In Quotes
 					if (!turlWord.empty()) turlFile.push_back(turlWord);
 					turlWord = "";
 				}
