@@ -1,12 +1,17 @@
 # Turl Syntax
 > All Of The Planned Commands In Turl, Currently Implemented Features will have (Implemented) at the end of the command name  
 > All Names Will Be Able To Be Adjusted with turl.lang
-## Turl Formatting
+## Turl Arguments
+- ./turl
+  - Main Program
+- <turlfile.turl>...
+  - The Files you want to run (keep listing files) [This is how imports work]
+### Turl Formatting
 - End Of Command
   - Commands end at a newline and also end at a semicolon ("\n",";")
 - Comments
   - Comments are created with # and go to the end of the line
-### Turl Commands & Operators [Commands #: 15, Operators #: 4]
+#### Turl Commands & Operators [Commands #: 15, Operators #: 4]
 - create [type..., name]
   - Creates a variable of a certain type and name
   - > `create byte number` , `create string hello`
@@ -91,7 +96,7 @@
 - end [no arguments]  
   - Ends the program  
   - > `end`  
-#### Example Program:
+##### Example Programs:
 - Variable Example Program:  
   `create byte number = value 1`
   - Creates a byte named number and sets it to 1  
