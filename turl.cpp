@@ -18,7 +18,8 @@ int main(int argc,char *argv[]) {
 		long unsigned int character = 0;
 		while (getline(turlSource,turlLine)) {
 			for (character = 0;character < turlLine.length();character++) {
-				if (turlLine[character] == ' ' && !quotes) { //Space Delimiter When Not In Quotes
+				if (turlLine[character] == '#' && !quotes) break; //hashtag '#' comments 
+				else if (turlLine[character] == ' ' && !quotes) { //Space Delimiter When Not In Quotes
 					if (!turlWord.empty()) turlFile.push_back(turlWord);
 					turlWord = "";
 				}

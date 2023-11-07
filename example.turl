@@ -1,3 +1,15 @@
-Turl Functions:
-mark <name>
-g "hello \"  world"
+# An example program showing some stuff you can do in Turl (you don't actualy need to delete everything as soon as you don't need it)
+
+print value "Enter Your Name: "
+create string name = input string
+print value "Hello, " string name value "!\nEnter a Number: "
+delete string name
+create byte number1 = input byte
+print value "Enter another Number: "
+create byte number2 = input byte
+create byte answer = byte number1 + byte number2
+delete byte number1
+delete byte number2
+print byte answer
+delete byte answer
+end

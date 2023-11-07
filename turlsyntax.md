@@ -4,13 +4,18 @@
 ## Turl Formatting
 - End Of Command
   - Commands end at a newline and also end at a semicolon ("\n",";")
-### Turl Commands & Operators [Commands #: 14, Operators #: 4]
+- Comments
+  - Comments are created with # and go to the end of the line
+### Turl Commands & Operators [Commands #: 15, Operators #: 4]
 - create [type..., name]
   - Creates a variable of a certain type and name
   - > `create byte number` , `create string hello`
   - list [type]:
     - Creates a list of a certain type
     - > `create list string users`
+- delete [type...,name]
+  - Deletes a vertiable of a certain type and name
+  - > `delete byte number`
 - byte [name]
   - Gets a byte of memory
   - > `byte name`
