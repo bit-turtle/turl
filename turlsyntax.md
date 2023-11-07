@@ -69,9 +69,28 @@
   - Goes to the next then statement
   - Example usage case: `while value 1; break; then`
     - Breaks out of the infinite loop
-- end [no arguments]
-  - Ends the program
-  - > `end`
+- condition [type, name, condition, type, name]
+  - Returns 0 if condition is false and returns 1 if true
+  - > `if condition byte a > byte b`
+  - Conditions:  
+    - \>  
+      - Greater than  
+      - > `if condition byte a > byte b`
+    - <  
+      - Less Than  
+      - > `if condition byte a < byte b`
+    - =  
+      - Equal To  
+      - > `if condition byte a = byte b`
+    - \>=  
+      - Greater Or Equal To  
+      - > `if condition byte a >= byte b`
+    - <=  
+      - Less than or equal to  
+      - > `if condition byte a <= byte b`
+- end [no arguments]  
+  - Ends the program  
+  - > `end`  
 #### Example Program:
 - Variable Example Program:  
   `create byte number = value 1`
