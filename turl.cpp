@@ -2,17 +2,17 @@
 #include <vector>
 #include <string>
 #include <fstream>
-using namespace std;
 
 int main(int argc,char *argv[]) {
 		if (argc < 2) {
 			std::cout << "Turl: [Usage] turl <something.turl>" << std::endl;
 			return 1;
 		}
-		ifstream turlSource(argv[1]);
-		vector<string> turlFile;
-		string turlLine;
-		string turlWord;
+
+		std::ifstream turlSource(argv[1]);
+		std::vector<string> turlFile;
+		std::string turlLine;
+		std::string turlWord;
 		bool quotes = false;
 		bool escape = false;
 		long unsigned int character = 0;
@@ -46,7 +46,8 @@ int main(int argc,char *argv[]) {
 			if (quotes) turlFile.push_back("\n");
 			else turlFile.push_back(";"); //Add semicolon at the end of every new line
 		}
-		for (string i : turlFile) {
-				cout << i << endl;
+		//Output Parsed Turl File
+		for (std::string i : turlFile) {
+				std::cout << i << endl;
 		}
 }
