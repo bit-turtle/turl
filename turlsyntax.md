@@ -30,9 +30,12 @@
 - value [value]
   - Is used to introduce preset values into the program
   - > `value 3`
-- list [type,name,(at/last/first/byte)]
+- list [type,name,(at/last/first/byte/new)]
   - Gets a value from a list
   - > `list string users at 1` , `list string users byte userid` , `list string users first` , `list string user last`
+  - new [type,name]
+  - Creates a new element in the list and then references it
+  - > `list string names new = input string`
 - = [type, name]
   - Sets the previous referenced byte to a value or the value of another byte
   - > `byte 1 = value 2` , `byte 1 = byte 2`
