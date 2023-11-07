@@ -10,7 +10,7 @@ int main(int argc,char *argv[]) {
 		}
 
 		std::ifstream turlSource(argv[1]);
-		std::vector<string> turlFile;
+		std::vector<std::string> turlFile;
 		std::string turlLine;
 		std::string turlWord;
 		bool quotes = false;
@@ -49,6 +49,6 @@ int main(int argc,char *argv[]) {
 		}
 		//Output Parsed Turl File
 		for (std::string i : turlFile) {
-				std::cout << i << endl;
+				std::cout << i << std::endl;
 		}
 }
