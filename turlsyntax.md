@@ -96,11 +96,18 @@
     - <=  
       - Less than or equal to  
       - > `if condition byte a <= byte b`
+- function [name,(type,name)...]
+  - Creates a function with a certain name and specifies the name and type of all of the local variables for the function
+  - > `function add byte num1 byte num2`
+  - Function definitions end with `then`
+- local [type,name]
+  - acsesses a local variable defined in a function definition
+  - > `function example byte number; print local byte number; then`  
 - end [no arguments]  
   - Ends the program  
   - > `end`  
 ##### Example Programs:
-- Variable Example Program:  
+- Variable Example Program: 
   `create byte number = value 1`
   - Creates a byte named number and sets it to 1  
   `create byte newNumber = value 5`  
