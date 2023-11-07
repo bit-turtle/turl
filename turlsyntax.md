@@ -1,7 +1,10 @@
 # Turl Syntax
 > All Of The Planned Commands In Turl, Currently Implemented Features will have (Implemented) at the end of the command name  
 > All Names Will Be Able To Be Adjusted with turl.lang
-## Turl Commands
+## Turl Formatting
+- End Of Command
+  - Commands end at a newline and also end at a semicolon ("\n",";")
+### Turl Commands & Operators [Commands #: 14, Operators #: 4]
 - create [type..., name]
   - Creates a variable of a certain type and name
   - > `create byte number` , `create string hello`
@@ -43,7 +46,28 @@
 - input [type]
   - Asks user for input
   - > `string a = input string`
-### Example Program:
+- while [type, name]
+  - Run some code until the value is not 0 or ""
+  - > `while byte i`
+    - Loops, subtracting 1 from i until i is 0, then prints done
+- if [type, name]
+  - Run some code if the value is not 0 or ""
+  - > `if byte signedIn`
+    - Will run if the byte 'signedIn' is not 0
+- else [no arguments]
+  - Run some code if the previous if statement didn't run (can be anywhere, not just after 'if')
+  - > `if ... else`
+- then [no arguments]
+  - The end of the code in the while loop or an if statement, otherwise is ignored (Could be used for styling?)
+  - > `while ... then` , `if ... then`
+- break [no arguments]
+  - Goes to the next then statement
+  - Example usage case: `while value 1; break; then`
+    - Breaks out of the infinite loop
+- end [no arguments]
+  - Ends the program
+  - > `end`
+#### Example Program:
 - Variable Example Program:  
   `create byte number = value 1`
   - Creates a byte named number and sets it to 1  
