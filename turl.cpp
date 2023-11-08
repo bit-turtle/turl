@@ -64,7 +64,7 @@ int main(int argc,char *argv[]) {
 				originalLang = ""; //What was written in the code
 				newLang = ""; //What it should be replaced with
 				for (character = 0; character < langLine.length(); character++) {
-					if (langLine[character] == "=") stage++;
+					if (langLine[character] == '=') stage++;
 					else if (stage == 0) originalLang += langLine[character];
 					else if (stage == 1) newLang += langLine[character];
 					else break;
@@ -87,7 +87,7 @@ int main(int argc,char *argv[]) {
 		//Variable Data Storage
 		std::vector<int> numbers; //If Value Deleted set to 0
 		std::vector<std::string> strings; //If Value Deleted set to ""
-		std::vector<std::vector<std::vector<>>> lists; //If Value Deleted empty vector
+		std::vector<std::vector<std::vector<unsigned int>>> lists; //If Value Deleted empty vector
 		std::vector<std::vector<short unsigned int>> listTypes;
 		//Reference Names,types,and locations, if deleted completely delete
 		std::vector<std::vector<std::string>> names;
@@ -107,7 +107,7 @@ int main(int argc,char *argv[]) {
 			}
 			void createString(std::string name) {
 				strings.push_back("");
-				names.push_back(names);
+				names.push_back(name);
 				types.push_back(1);
 				strings.size() - 1;
 			}
@@ -164,7 +164,7 @@ int main(int argc,char *argv[]) {
 							break;
 					}
 				}
-				void new(unsigned int location,short unsigned int type = 0) {
+				void newItem(unsigned int location,short unsigned int type = 0) {
 					currentType = listTypes.at(0);
 					currentLocation = lists.at(location).at(lists.at(location).size());
 					switch (listTypes.at(location)) {
@@ -178,12 +178,14 @@ int main(int argc,char *argv[]) {
 							break;
 						case 2:
 							lists.push_back({});
-							listTypes.push_back(type)
+							std::vector<short unsigned int> futureTypes = listTypes.at(location);
+							futureTypes.erase(futureTypes.begin());
+							listTypes.push_back(futureTypes);
 							lists.at(location).push_back(lists.size());
 							break;
 					}
 				}
-			}
+			};
 		};
 		//Output Parsed Turl File
 		for (std::string i : turlFile) {
