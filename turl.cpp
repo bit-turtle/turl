@@ -178,8 +178,8 @@ int main(int argc,char *argv[]) {
 							break;
 						case 2:
 							lists.push_back({});
-							std::vector<short unsigned int> futureTypes = listTypes.at(location);
-							futureTypes.erase(futureTypes.begin());
+							std::vector<short unsigned int> futureTypes(listTypes.at(location));
+							if (futureTypes.size() > 0) futureTypes.erase(futureTypes.begin());
 							listTypes.push_back(futureTypes);
 							lists.at(location).push_back(lists.size());
 							break;
