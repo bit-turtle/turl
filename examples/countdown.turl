@@ -1,0 +1,19 @@
+# Input Number
+print value "Countdown from:"
+create number countdown
+input number countdown
+
+# Loop
+mark loop
+
+# Print current value
+print number countdown
+
+# Decrement
+number countdown -= value 1
+
+# Loop until number countdown is 0
+if number countdown > value 0 goto mark loop
+
+# End of Program
+print value "Loop Done!"

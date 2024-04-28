@@ -1,0 +1,14 @@
+mark 1
+print value 1
+goto mark 3
+
+mark 2
+print value 2
+goto mark end
+
+mark 3
+print value 3
+goto mark 2
+
+mark end
+print value end

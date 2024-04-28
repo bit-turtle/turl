@@ -1,0 +1,3 @@
+create string 1 = value "A"
+create string 2 = value "A"
+if string 1 = string 2 print value "string 1 = string 2 !!!!"

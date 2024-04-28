@@ -1,0 +1,16 @@
+# Things you can technically do with quotes in Turl
+# In Turl quotes ("") means to keep the spaces in one token
+
+# Strange but still correct
+"print" "value" "Quoted!"
+
+# This works if the value has no spaces in it
+print value noQuotes!
+
+# Variable names can have spaces in them if you quote them
+create number "number of cats in world" = value 500
+print number "number of cats in world"
+
+# You can quote numbers if you want
+number "number of cats in world" = value "5000"
+print number "number of cats in world"

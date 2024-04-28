@@ -1,0 +1,32 @@
+# Example Program
+
+# String Type Math
+create number val = value 4
+number val *= number val
+create string str = value hello
+string str += value " world"
+# Output
+print string str number val
+
+# Input String
+print value "What is your name?: "
+create string input
+input string input
+print value "Hello, " string input
+
+# Input Number
+print value "Enter A number:"
+create number num
+input number num
+string input += number num
+print string input
+
+# Branching / Looping
+create string yn
+mark message
+print value "Repeat This Message?: [Y/N]:"
+input string yn
+if string yn = value "y" goto mark message
+
+# End of the program
+print value "Done!"

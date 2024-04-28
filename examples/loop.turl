@@ -1,0 +1,4 @@
+print value "Infinite Loop!!!!"
+mark loop
+print value "looping!!"
+goto mark loop
