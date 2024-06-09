@@ -19,7 +19,7 @@ std::vector<std::vector<std::string>> parse(std::string buffer) {
 		std::stringstream linestream(line);
 
 		std::string comment;
-		getline(linestream,comment,'#'); //Remove comments '#' is a comment
+		getline(linestream,comment,'#'); //Remove comments from line '#' is a comment
 
 		std::stringstream commentstream(comment);
 
@@ -31,19 +31,36 @@ std::vector<std::vector<std::string>> parse(std::string buffer) {
 
 				std::stringstream quotestream(quote);
 
-				std::string word;
+        std::string subline;  // Lines created by semicolons
 
-				while (getline(quotestream,word,' ')) {	//Split lines into words
+        bool newline = false;
 
-					std::stringstream wordstream(word);
-					std::string token;
+        while(getline(quotestream,subline,';')) {
 
-					while (getline(wordstream,token,',')) {	//Split words into tokens
+          if (newline) {
+            result.push_back({});
+            length++;
+          }
 
-						if (quote != "") result.at(length-1).push_back(token);	//Add tokens to list
+          std::stringstream sublinestream(subline);
 
-					}
-				}
+				  std::string word;
+
+				  while (getline(sublinestream,word,' ')) {	//Split lines into words
+
+					  std::stringstream wordstream(word);
+					  std::string token;
+
+					  while (getline(wordstream,token,',')) {	//Split words into tokens
+
+						  if (quote != "") result.at(length-1).push_back(token);	//Add tokens to list
+
+					  }
+				  }
+
+          newline = true;
+
+        }
 			}
 			else {
 				result.at(length-1).push_back(quote);

@@ -1,0 +1,2 @@
+# Semicolons can be used to create newlines early and make everything be on one line
+create string test; print value "Input a String"; input string test; print value "You Wrote: '" string test value "' !!!!"

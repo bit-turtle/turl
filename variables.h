@@ -25,6 +25,13 @@ int getNumber(std::string name) {
 	return -1;
 }
 
+void deleteNumber(std::string name) {
+  int id = getNumber(name);
+  if (id != -1) {
+    numbers.erase(numbers.begin()+id);
+  }
+}
+
 //Strings
 struct string {
 	std::string name;
@@ -47,6 +54,13 @@ int getString(std::string name) {
 	for (int i = 0; i < strings.size(); i++)
 		if (strings.at(i).name == name) return i;
 	return -1;
+}
+
+void deleteString(std::string name) {
+  int id = getString(name);
+  if (id != -1) {
+    strings.erase(strings.begin()+id);
+  }
 }
 
 //Locations

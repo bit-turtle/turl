@@ -1,0 +1,11 @@
+# A program showing the delete keyword
+create string input
+output value "Enter Something:"
+input string input
+
+print value "input = " string input # No Error
+
+delete string input
+print value "Input Deleted!"
+
+print value "input = " string input # Reference Error

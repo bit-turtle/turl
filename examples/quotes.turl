@@ -8,8 +8,8 @@
 print value noQuotes!
 
 # Variable names can have spaces in them if you quote them
-create number "number of cats in world" = value 500
-print number "number of cats in world"
+create number "number of good cats in world" = value 0
+print number "number of good cats in world"
 
 # You can quote numbers if you want
 number "number of cats in world" = value "5000"

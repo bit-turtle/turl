@@ -163,7 +163,39 @@ bool stringMath(std::string name, int offset, std::vector<std::string> math) {
 
 bool interpret(std::vector<std::string> inst, int line, int *lnptr) { //True = success, False = fail
 	//Low operand count to high operand count 1 -> ...
-	if (inst.at(0) == "print") {
+  if (inst.at(0) == "end") {
+    *lnptr = -1;
+    return true;
+  }
+
+  if (inst.at(0) == "output") {
+		for (int i = 1; i+1 < inst.size(); i+=2) {
+			if (inst.at(i) == "value") {
+				std::cout << inst.at(i+1);
+			}
+			else if (inst.at(i) == "number") {
+				if (!numberExists(inst.at(i+1))) {
+					std::cout << "[Number Reference Error] (Line " << line << ") " << inst.at(i+1);
+					return false;
+				}
+				std::cout << numbers.at(getNumber(inst.at(i+1))).value;
+			}
+			else if (inst.at(i) == "string") {
+				if (!stringExists(inst.at(i+1))) {
+					std::cout << "[String Reference Error] (Line " << line << ") " << inst.at(i+1);
+					return false;
+				}
+				std::cout << strings.at(getString(inst.at(i+1))).value;
+			}
+			else {
+				std::cout << "[Invalid Print Type] (Line " << line << ") " << inst.at(i) << std::endl;
+				return false;
+			}
+		}
+		return true;
+	}
+	
+  if (inst.at(0) == "print") {
 		for (int i = 1; i+1 < inst.size(); i+=2) {
 			if (inst.at(i) == "value") {
 				std::cout << inst.at(i+1);
@@ -190,6 +222,7 @@ bool interpret(std::vector<std::string> inst, int line, int *lnptr) { //True = s
 		std::cout << std::endl;
 		return true;
 	}
+
 	if (inst.at(0) == "input") {
 		for (int i = 1; i+1 < inst.size(); i+=2) {
 			if (inst.at(i) == "number") {
@@ -213,6 +246,23 @@ bool interpret(std::vector<std::string> inst, int line, int *lnptr) { //True = s
 		}
 		return true;
 	}
+
+  if (inst.at(0) == "delete") {
+		for (int i = 1; i+1 < inst.size(); i+=2) {
+			if (inst.at(i) == "number") {
+				deleteNumber(inst.at(i+1));
+			}
+			else if (inst.at(i) == "string") {
+				deleteString(inst.at(i+1));
+			}
+			else {
+				std::cout << "[Invalid Type] (Line " << line << ") " << inst.at(i) << std::endl;
+				return false;
+			}
+		}
+		return true;
+	}
+
 	//2 Operands
 	if (inst.size() < 2) {
 		std::cout << "[Low Operand Count] (Line " << line << ") For Instruction: " << inst.at(0) << std::endl;

@@ -59,6 +59,12 @@ int main(int argc,char *argv[]) {
 				//Display strings
 				for (int i = 0; i < strings.size(); i++) std::cout << "string " << strings.at(i).name << " = " << strings.at(i).value << std::endl;
 			}
+
+      //Detect Software End Instruction
+      if (line == -1) {
+        break;
+      }
+
 		}
 
 		//End Of Program

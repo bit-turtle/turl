@@ -1,0 +1,9 @@
+# There are 2 ways to output information in turl, output, and print
+
+output value "Hello, World"
+output value "Hello, World"
+
+print value # Separate the tests with a newline
+
+print value "Hello, World"
+print value "Hello, World"

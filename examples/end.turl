@@ -1,0 +1,14 @@
+# A Turl Program Demonstrating the "end" instruction
+
+print value "End Program? [Y/N]:"
+
+create string input
+input string input
+
+if string input = value "y" end
+if string input = value "Y" end
+if string input = value "yes" end
+if string input = value "Yes" end
+if string input = value "YES" end
+
+print value "The Program Was Not Ended Early!"
